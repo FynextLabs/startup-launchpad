@@ -9,11 +9,11 @@ const faqs = [
 
 export const FAQ = () => (
   <section id="faq" className="container mx-auto py-20">
-    <div className="max-w-2xl mb-10">
+    <div className="max-w-2xl mb-10 mx-auto text-center">
       <span className="comic-border-sm bg-accent px-3 py-1 text-sm font-bold inline-block mb-4">FAQ</span>
       <h2 className="text-4xl md:text-5xl">Quick answers.</h2>
     </div>
-    <div className="comic-border p-4 md:p-8 max-w-3xl">
+    <div className="comic-border p-4 md:p-8 max-w-3xl mx-auto">
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((f, i) => (
           <AccordionItem key={i} value={`item-${i}`}>

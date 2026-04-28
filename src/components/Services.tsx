@@ -9,13 +9,15 @@ const services = [
   { icon: LineChart, title: "Growth", desc: "Analytics, experiments and features that move the needle.", bg: "bg-secondary" },
 ];
 
-export const Services = () => (
+export const Services = ({ hideHeader = false }: { hideHeader?: boolean }) => (
   <section id="services" className="container mx-auto py-20">
-    <div className="max-w-2xl mb-12">
-      <span className="comic-border-sm bg-pop px-3 py-1 text-sm font-bold inline-block mb-4">What we do</span>
-      <h2 className="text-4xl md:text-5xl mb-4">Everything your startup needs, in one team.</h2>
-      <p className="text-lg text-muted-foreground">No agencies stacked on agencies. One small remote crew that owns the whole journey with you.</p>
-    </div>
+    {!hideHeader && (
+      <div className="max-w-2xl mb-12">
+        <span className="comic-border-sm bg-pop px-3 py-1 text-sm font-bold inline-block mb-4">What we do</span>
+        <h2 className="text-4xl md:text-5xl mb-4">Everything your startup needs, in one team.</h2>
+        <p className="text-lg text-muted-foreground">No agencies stacked on agencies. One small remote crew that owns the whole journey with you.</p>
+      </div>
+    )}
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {services.map(({ icon: Icon, title, desc, bg }) => (
         <article key={title} className="comic-border p-6 hover:-translate-y-1 transition-transform">
