@@ -13,6 +13,15 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Comfortaa', 'system-ui', 'sans-serif'],
+        comic: ['Comfortaa', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        comic: '6px 6px 0 hsl(var(--ink))',
+        'comic-sm': '4px 4px 0 hsl(var(--ink))',
+        'comic-lg': '10px 10px 0 hsl(var(--ink))',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +55,10 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        pop: {
+          DEFAULT: "hsl(var(--pop))",
+          foreground: "hsl(var(--pop-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
