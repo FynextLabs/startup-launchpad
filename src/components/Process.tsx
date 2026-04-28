@@ -1,3 +1,7 @@
+import photoSketch from "@/assets/photo-sketch.jpg";
+import photoTeam from "@/assets/photo-team.jpg";
+import photoLaunch from "@/assets/photo-launch.jpg";
+
 const steps = [
   { n: "01", title: "Chat", desc: "We hop on a call, listen to your idea, your goals, your budget.", bg: "bg-accent" },
   { n: "02", title: "Plan", desc: "A clear scope, timeline and tech stack — no jargon, no surprises.", bg: "bg-secondary" },
@@ -20,6 +24,19 @@ export const Process = () => (
             <p className="text-muted-foreground">{s.desc}</p>
           </div>
         ))}
+      </div>
+
+      {/* Real photo strip */}
+      <div className="mt-16 grid sm:grid-cols-3 gap-6">
+        <div className="comic-border overflow-hidden -rotate-2">
+          <img src={photoSketch} alt="Sketching the plan" loading="lazy" width={1024} height={768} className="w-full h-56 object-cover" />
+        </div>
+        <div className="comic-border overflow-hidden rotate-1">
+          <img src={photoTeam} alt="Our remote team building together" loading="lazy" width={1024} height={768} className="w-full h-56 object-cover" />
+        </div>
+        <div className="comic-border overflow-hidden -rotate-1">
+          <img src={photoLaunch} alt="Founder celebrating launch day" loading="lazy" width={1024} height={768} className="w-full h-56 object-cover" />
+        </div>
       </div>
     </div>
   </section>
