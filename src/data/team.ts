@@ -5,6 +5,7 @@ import t4 from "@/assets/team-4-in.png";
 import t5 from "@/assets/team-5-nl.png";
 import t6 from "@/assets/team-6-br.png";
 import t7 from "@/assets/team-7-ca.png";
+import t8 from "@/assets/team-8-in-pm.png";
 
 export type Member = {
   name: string;
@@ -87,5 +88,15 @@ export const team: Member[] = [
     bio: "Ships React Native apps that don't crash on day one. Will absolutely test that weird edge case.",
     scars: "Solo-launched a habit tracker. Got 50k downloads, $0 revenue. Great resume bullet, terrible business.",
     photo: t7,
+  },
+  {
+    name: "Humphrey Rawat",
+    title: "Project Manager · The Glue",
+    location: "Uttarakhand, India 🏔️",
+    flag: "🇮🇳",
+    experience: "11 years",
+    bio: "Runs the whole show from a quiet town in the Himalayan mountains of Uttarakhand. The first person you'll talk to — he turns your messy idea into a clear plan, then keeps the team shipping. Famous for replying faster than your IDE autocompletes.",
+    scars: "Founded a travel-tech startup that ran out of cash right before tourist season. The pivot, the layoffs, the founder loneliness — he's lived all of it. That's exactly why he started suggesting we team up to help others avoid the same potholes.",
+    photo: t8,
   },
 ];
