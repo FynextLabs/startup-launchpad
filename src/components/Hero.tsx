@@ -1,5 +1,6 @@
 import { ComicButton } from "./ComicButton";
 import { Sparkles, Rocket } from "lucide-react";
+import heroWoman from "@/assets/hero-woman.png";
 
 export const Hero = () => {
   return (
@@ -31,28 +32,40 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Comic panel illustration */}
-        <div className="relative">
-          <div className="comic-border-lg bg-card p-6 md:p-8 rotate-1">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="comic-border-sm bg-primary/30 p-4 h-40 flex items-end">
-                <span className="font-bold">Idea ✨</span>
-              </div>
-              <div className="comic-border-sm bg-secondary/40 p-4 h-40 flex items-end -rotate-2">
-                <span className="font-bold">Design 🎨</span>
-              </div>
-              <div className="comic-border-sm bg-pop/40 p-4 h-40 flex items-end rotate-2">
-                <span className="font-bold">Build 🛠️</span>
-              </div>
-              <div className="comic-border-sm bg-accent p-4 h-40 flex items-end">
-                <span className="font-bold">Launch 🚀</span>
-              </div>
+        {/* Hero portrait surrounded by comic stickers */}
+        <div className="relative mx-auto w-full max-w-md aspect-square">
+          {/* Portrait panel */}
+          <div className="comic-border-lg bg-card p-3 h-full w-full overflow-hidden rotate-1">
+            <div className="halftone bg-primary/15 h-full w-full rounded-2xl flex items-end justify-center overflow-hidden">
+              <img
+                src={heroWoman}
+                alt="Friendly Startup Labs founder portrait"
+                width={768}
+                height={1024}
+                className="h-[110%] w-auto object-contain object-bottom drop-shadow-[4px_4px_0_hsl(var(--ink))]"
+              />
             </div>
           </div>
-          <div className="absolute -top-6 -right-4 comic-border-sm bg-accent px-4 py-2 font-bold rotate-6">
+
+          {/* Floating stickers */}
+          <div className="absolute -top-5 -left-5 comic-border-sm bg-primary/40 px-4 py-2 font-bold -rotate-6">
+            Idea ✨
+          </div>
+          <div className="absolute -top-4 -right-6 comic-border-sm bg-secondary/70 px-4 py-2 font-bold rotate-6">
+            Design 🎨
+          </div>
+          <div className="absolute -bottom-5 -left-6 comic-border-sm bg-pop/70 px-4 py-2 font-bold -rotate-6">
+            Build 🛠️
+          </div>
+          <div className="absolute -bottom-4 -right-5 comic-border-sm bg-accent px-4 py-2 font-bold rotate-6">
+            Launch 🚀
+          </div>
+
+          {/* Comic shouts */}
+          <div className="absolute top-10 -right-10 hidden md:block comic-border-sm bg-accent px-3 py-1 font-bold rotate-12 text-sm">
             POW!
           </div>
-          <div className="absolute -bottom-6 -left-4 comic-border-sm bg-pop px-4 py-2 font-bold -rotate-6">
+          <div className="absolute bottom-16 -left-10 hidden md:block comic-border-sm bg-pop px-3 py-1 font-bold -rotate-12 text-sm">
             Ship it!
           </div>
         </div>
