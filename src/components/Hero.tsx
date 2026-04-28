@@ -18,7 +18,7 @@ export const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <ComicButton variant="primary" size="lg" asChildHref="/contact">
-              <Rocket className="mr-2 h-5 w-5" /> Schedule a call
+              <Rocket className="mr-2 h-5 w-5" /> Talk to Humphrey
             </ComicButton>
             <ComicButton variant="ghost" size="lg" asChildHref="/services">See what we do</ComicButton>
           </div>
