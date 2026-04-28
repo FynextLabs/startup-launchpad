@@ -17,10 +17,10 @@ export const Hero = () => {
             From a solo founder with an idea to a well-funded team scaling fast — we design, code, ship, maintain and grow your product alongside you.
           </p>
           <div className="flex flex-wrap gap-4">
-            <ComicButton variant="primary" size="lg" asChildHref="#contact">
+            <ComicButton variant="primary" size="lg" asChildHref="/contact">
               <Rocket className="mr-2 h-5 w-5" /> Schedule a call
             </ComicButton>
-            <ComicButton variant="ghost" size="lg" asChildHref="#services">See what we do</ComicButton>
+            <ComicButton variant="ghost" size="lg" asChildHref="/services">See what we do</ComicButton>
           </div>
           <div className="mt-8 flex items-center gap-4">
             <div className="flex -space-x-2">
