@@ -2,95 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Startup Labs — Comic look, soft light colors, no gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 45 60% 96%;       /* soft cream */
+    --foreground: 230 30% 15%;      /* near-ink navy */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 230 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 230 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 90% 65%;         /* soft comic blue */
+    --primary-foreground: 230 30% 12%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 350 90% 80%;       /* soft pink */
+    --secondary-foreground: 230 30% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 40% 92%;
+    --muted-foreground: 230 15% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 50 95% 75%;           /* sunny yellow */
+    --accent-foreground: 230 30% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --pop: 145 55% 70%;             /* mint */
+    --pop-foreground: 230 30% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 80% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 230 30% 12%;          /* ink for comic outlines */
+    --input: 230 30% 12%;
+    --ring: 220 90% 65%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 1rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --ink: 230 30% 12%;
+    --shadow-comic: 6px 6px 0 hsl(var(--ink));
+    --shadow-comic-sm: 4px 4px 0 hsl(var(--ink));
+    --shadow-comic-lg: 10px 10px 0 hsl(var(--ink));
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 45 60% 96%;
+    --sidebar-foreground: 230 30% 15%;
+    --sidebar-primary: 220 90% 65%;
+    --sidebar-primary-foreground: 230 30% 12%;
+    --sidebar-accent: 50 95% 75%;
+    --sidebar-accent-foreground: 230 30% 15%;
+    --sidebar-border: 230 30% 12%;
+    --sidebar-ring: 220 90% 65%;
   }
 }
 
@@ -99,7 +60,38 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Comfortaa', system-ui, sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Comfortaa', system-ui, sans-serif;
+    background-image:
+      radial-gradient(hsl(var(--ink) / 0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .comic-border {
+    @apply border-[3px] border-foreground rounded-2xl bg-card;
+    box-shadow: var(--shadow-comic);
+  }
+  .comic-border-sm {
+    @apply border-[2px] border-foreground rounded-xl bg-card;
+    box-shadow: var(--shadow-comic-sm);
+  }
+  .comic-border-lg {
+    @apply border-[4px] border-foreground rounded-3xl bg-card;
+    box-shadow: var(--shadow-comic-lg);
+  }
+  .halftone {
+    background-image: radial-gradient(hsl(var(--ink) / 0.25) 1.2px, transparent 1.4px);
+    background-size: 8px 8px;
   }
 }
